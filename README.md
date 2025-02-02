@@ -43,7 +43,7 @@ This repository provides a Docker-based development environment for ROS2 Humble,
 
 ## Directory Structure
 
-```
+```text
 .
 ├── Dockerfile           # Container configuration
 ├── docker-compose.yml   # Development environment setup
@@ -172,7 +172,8 @@ source install/setup.bash
 ### 11. Creating a Workspace
 
 The workspace is already set up at `/root/ros2_ws` in the container with the following structure:
-```
+
+```text
 ros2_ws/
 ├── src/        # Source space (your packages go here)
 ├── build/      # Build space (created after building)
