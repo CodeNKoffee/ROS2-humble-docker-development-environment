@@ -2,9 +2,6 @@ FROM ros:humble-ros-core
 
 # Install basic utilities and ROS2 packages
 RUN apt-get update && apt-get install -y \
-  ros-humble-demo-nodes-cpp \
-  # ros-humble-foxglove-bridge \
-  ros-humble-tf2-ros \
   # Add these useful packages
   python3-pip \
   python3-colcon-common-extensions \
