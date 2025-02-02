@@ -1,0 +1,6 @@
+# Task 10-12: Ignore build artifacts and Python cache
+build/      # Colcon build directory
+install/    # Colcon install directory
+log/        # ROS2 log files
+*.pyc       # Python compiled files
+__pycache__/ # Python cache directories 

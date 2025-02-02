@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ros2_dev:
+    build: .
+    network_mode: host          # Required for ROS2 node communication
+    environment:
+      - DISPLAY=${DISPLAY}      # Required for GUI tools (Tasks 2,7: turtlesim, rqt)
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix  # X11 forwarding for GUI applications
+      - ./src:/root/ros2_ws/src        # Task 11-15: Mount source directory for development
+    command: bash 
