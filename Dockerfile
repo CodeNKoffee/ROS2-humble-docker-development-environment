@@ -11,6 +11,12 @@ RUN apt-get update && apt-get install -y \
   ros-humble-turtlesim \
   ros-humble-rqt \
   ros-humble-rqt-common-plugins \
+  # Add these for GUI support
+  libxcb1-dev \
+  libx11-xcb-dev \
+  # Additional Qt dependencies
+  qt5-default \
+  qtbase5-dev \
   && rm -rf /var/lib/apt/lists/*
 
 # Task 1: Configure ROS2 environment

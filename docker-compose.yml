@@ -1,11 +1,19 @@
-version: '3'
+version: "3"
 services:
   ros2_dev:
     build: .
-    network_mode: host          # Required for ROS2 node communication
+    # Changed from host mode for macOS compatibility
+    network_mode: bridge
     environment:
-      - DISPLAY=${DISPLAY}      # Required for GUI tools (Tasks 2,7: turtlesim, rqt)
+      # Updated DISPLAY variable for macOS
+      - DISPLAY=host.docker.internal:0
+    extra_hosts:
+      # Required for macOS to resolve host.docker.internal
+      - "host.docker.internal:host-gateway"
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix  # X11 forwarding for GUI applications
-      - ./src:/root/ros2_ws/src        # Task 11-15: Mount source directory for development
-    command: bash 
+      - /tmp/.X11-unix:/tmp/.X11-unix # X11 forwarding for GUI applications
+      - ./src:/root/ros2_ws/src # Task 11-15: Mount source directory for development
+    # Add these for better container stability
+    stdin_open: true
+    tty: true
+    command: bash
