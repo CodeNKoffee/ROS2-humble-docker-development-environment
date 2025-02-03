@@ -1,6 +1,7 @@
 # macOS XQuartz configuration
 export PATH="/opt/X11/bin:$PATH"
-# macOS-specific DISPLAY setting
-export DISPLAY=:0
+export DISPLAY=host.docker.internal:0
+export QT_QPA_PLATFORM="xcb"
 
-# Remove the alias as we'll use full path 
+# Add this alias for xhost
+alias xhost="/opt/X11/bin/xhost"
